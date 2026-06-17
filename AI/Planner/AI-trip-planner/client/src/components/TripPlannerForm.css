@@ -1,0 +1,297 @@
+.trip-planner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Updated .header for background image with overlay */
+.header {
+  position: relative; 
+  height:360px;/* For overlay positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content:center;
+  margin-bottom: 40px;
+  padding: 0px 20px; /* Add padding for spacing */
+  background-image:url('/images/image2.jpeg'); /* Your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white; /* Text on dark overlay */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index:1;
+}
+
+.header-text {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  max-width: 90%;
+}
+
+/* Add overlay inside .header */
+.header::before {
+  content: "";
+  position: absolute;
+  inset:0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 0;
+  border-radius: 12px;
+}
+
+/* Put text above overlay */
+.header h1,
+.header p,
+.features {
+  position: relative;
+  text-shadow:0 2px 4px rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+/* Remove image tag if you're using background image */
+.header-image {
+  display: none; /* Not needed anymore */
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.features span {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+.section-blue {
+  border-left: 6px solid #3498db;
+}
+
+.section-green {
+  border-left: 6px solid #2ecc71;
+}
+
+.section-purple {
+  border-left: 6px solid #9b59b6;
+}
+
+.section-orange {
+  border-left: 6px solid #e67e22;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.checkbox-grid label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form-footer button {
+  padding: 12px 28px;
+  font-size: 1rem;
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-footer button:hover {
+  background-color: #2471a3;
+}
+
+@media (max-width: 600px) {
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-footer button {
+    width: 100%;
+  }
+}
+/* Add these to your existing TripPlannerForm.css */
+
+.section-teal {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+}
+
+.search-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.search-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.flight-btn {
+  background: #4CAF50;
+}
+
+.flight-btn:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.hotel-btn {
+  background: #2196F3;
+}
+
+.hotel-btn:hover {
+  background: #0b7dda;
+  transform: translateY(-2px);
+}
+
+.search-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  padding: 12px;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid #c62828;
+}
+
+.results-section {
+  margin-top: 20px;
+}
+
+.results-section h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.result-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.flight-card {
+  border-left: 4px solid #4CAF50;
+}
+
+.hotel-card {
+  border-left: 4px solid #2196F3;
+}
+
+.result-card p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.result-card .price {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}

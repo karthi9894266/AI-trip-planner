@@ -1,0 +1,149 @@
+.dashboard {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f0f6ff;
+  border-radius: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header {
+  background: linear-gradient(to right, #4a90e2, #50a9ff);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.header-buttons {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  background: white;
+  border: none;
+  border-radius: 24px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  background: #e4eaff;
+  transform: scale(1.02);
+}
+
+.plan-trip-btn {
+  color: #4a90e2;
+  background-color: #ffffff;
+  border: 2px solid #4a90e2;
+}
+
+.logout-btn {
+  color: #fff;
+  background-color: #d9534f;
+  border: 2px solid #c9302c;
+}
+
+form.plan-trip-form {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+form input[type='text'],
+form input[type='date'],
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form div {
+  margin-bottom: 0.5rem;
+}
+
+form input[type='checkbox'] {
+  margin-right: 0.4rem;
+}
+
+.trips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.trip-card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.trip-card:hover {
+  transform: translateY(-4px);
+}
+
+.trip-card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.trip-card p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.delete-btn {
+  background: #d9534f;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+.delete-btn:hover {
+  background: #c9302c;
+}
+
+.map-placeholder {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  color: #666;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}

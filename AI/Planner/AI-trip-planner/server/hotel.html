@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hotel Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f1f1f1;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-top: 0.25rem;
+    }
+    #result {
+      margin-top: 2rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .hotel-card {
+      border-left: 4px solid #007BFF;
+      padding-left: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>🏨 Hotel Search</h2>
+  <div class="form-group">
+    <label>City Code (e.g., NYC, DEL, PAR)</label><br>
+    <input type="text" id="cityCode" />
+  </div>
+  <div class="form-group">
+    <label>Check-In Date</label><br>
+    <input type="date" id="checkIn" />
+  </div>
+  <div class="form-group">
+    <label>Check-Out Date</label><br>
+    <input type="date" id="checkOut" />
+  </div>
+  <button onclick="searchHotel()">🔍 Search Hotel</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function searchHotel() {
+      const cityCode = document.getElementById('cityCode').value.trim();
+      const checkInDate = document.getElementById('checkIn').value;
+      const checkOutDate = document.getElementById('checkOut').value;
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = 'Searching...';
+
+      try {
+        const res = await fetch(`http://localhost:5000/search-hotels?cityCode=${cityCode}&checkInDate=${checkInDate}&checkOutDate=${checkOutDate}`);
+        const data = await res.json();
+
+        if (!res.ok) {
+          resultDiv.innerHTML = `<p style="color:red;">❌ ${data.message}</p>`;
+          return;
+        }
+
+        const hotel = data[0];
+        resultDiv.innerHTML = `
+          <div class="hotel-card">
+            <h3>${hotel.hotelName}</h3>
+            <p><strong>Address:</strong> ${hotel.address}</p>
+            <p><strong>Price:</strong> ${hotel.price} ${hotel.currency}</p>
+          </div>
+        `;
+      } catch (err) {
+        console.error(err);
+        resultDiv.innerHTML = `<p style="color:red;">Error fetching hotel data.</p>`;
+      }
+    }
+  </script>
+</body>
+</html>

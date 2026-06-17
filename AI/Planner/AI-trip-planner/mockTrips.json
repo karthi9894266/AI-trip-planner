@@ -1,0 +1,16 @@
+[
+  {
+    "userId": "test@example.com",
+    "destination": "Paris",
+    "startDate": "2025-06-10",
+    "endDate": "2025-06-15",
+    "itinerary": "Day 1: Eiffel Tower, Day 2: Louvre, ..."
+  },
+  {
+    "userId": "test@example.com",
+    "destination": "New York",
+    "startDate": "2025-07-01",
+    "endDate": "2025-07-05",
+    "itinerary": "Day 1: Times Square, Day 2: Central Park, ..."
+  }
+]
