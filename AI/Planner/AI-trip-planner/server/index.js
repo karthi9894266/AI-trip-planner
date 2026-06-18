@@ -20,7 +20,7 @@ import './config/googleAuth.js';
 
 // --- CORRECTED PATHS ASSUMING MIDDLEWARE AND MODELS ARE INSIDE THE SERVER DIRECTORY ---
 import authenticateToken from "./middleware/authMiddleware.js";
-import Chat from "./models/Chat.js";
+import Chat from "./models/chat.js";
 
 // --- IMPORT ALL ROUTERS SAFELY ---
 const flightsModule = await import('./routes/flights.js');

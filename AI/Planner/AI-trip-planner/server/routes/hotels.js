@@ -1,6 +1,6 @@
 import express from 'express';
 import amadeus from '../services/amadeusClient.js';
-import Hotel from '../models/Hotel.js';
+import Hotel from '../models/hotel.js';
 
 const router = express.Router();
 
