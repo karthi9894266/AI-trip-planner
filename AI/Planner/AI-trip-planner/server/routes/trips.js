@@ -4,7 +4,7 @@ dotenv.config();
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import Chat from '../models/Chat.js';
-import Trip from '../models/Trip.js'; // ✅ ADD THIS - Import Trip model
+import Trip from '../models/trip.js'; // ✅ ADD THIS - Import Trip model
 import generateItinerary from '../utils/hfPlanner.js';
 
 const router = express.Router();
