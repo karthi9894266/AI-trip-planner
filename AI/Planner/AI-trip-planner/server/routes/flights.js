@@ -1,6 +1,6 @@
 import express from 'express';
 import amadeus from '../services/amadeusClient.js';
-import Flight from '../models/';
+import Flight from '../models/Flight.js';
 
 const router = express.Router();
 
