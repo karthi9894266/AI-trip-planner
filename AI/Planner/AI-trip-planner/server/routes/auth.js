@@ -2,7 +2,7 @@ import express from 'express';
 import passport from 'passport';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import User from '../models/User.js'; // Crucial: Changed require() to import and added .js extension
+import User from '../models/user.js'; // Crucial: Changed require() to import and added .js extension
 
 const router = express.Router();
 
