@@ -69,7 +69,7 @@ router.get(
   '/google/callback',
   passport.authenticate('google', {
     session: false,
-    failureRedirect: 'http://localhost:5173/login',
+    failureRedirect: 'https://ai-trip-planner-sooty-three.vercel.app/login',
   }),
   (req, res) => {
     try {
@@ -83,10 +83,10 @@ router.get(
       );
 
       // Redirect with token to frontend
-      res.redirect(`http://localhost:5173/dashboard?token=${token}`);
+      res.redirect(`https://ai-trip-planner-sooty-three.vercel.app/dashboard?token=${token}`);
     } catch (err) {
       console.error('Google callback error:', err);
-      res.redirect('http://localhost:5173/login');
+      res.redirect('https://ai-trip-planner-sooty-three.vercel.app/login');
     }
   }
 );
