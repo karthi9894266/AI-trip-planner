@@ -137,7 +137,7 @@ const TripPlannerForm = () => {
       const token = localStorage.getItem('token');
 
       const res = await axios.post(
-        'http://localhost:5000/api/trips/generate-itinerary',
+        'https://ai-trip-planner-backend-4ga2.onrender.com/api/trips/generate-itinerary',
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -169,7 +169,7 @@ const TripPlannerForm = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/trips', formData, {
+      await axios.post('https://ai-trip-planner-backend-4ga2.onrender.com/api/trips', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'

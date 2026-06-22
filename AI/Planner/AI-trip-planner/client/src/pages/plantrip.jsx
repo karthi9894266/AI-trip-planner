@@ -42,7 +42,7 @@ export default function PlanTrip() {
     e.preventDefault();
     try {
       await axios.post(
-        'http://localhost:5000/api/trips',
+        'https://ai-trip-planner-backend-4ga2.onrender.com/api/trips',
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );

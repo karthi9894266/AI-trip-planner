@@ -10,7 +10,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:5000/api/auth/register', { email, password })
+      await axios.post('https://ai-trip-planner-backend-4ga2.onrender.com/api/auth/register', { email, password })
       alert('Registered successfully. Now login!')
       navigate('/login')
     } catch (err) {

@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
       localStorage.setItem('token', jwtToken); // persist token
 
       // ✅ FIX: Use full backend URL
-      const res = await axios.get('http://localhost:5000/api/auth/user', {
+      const res = await axios.get('https://ai-trip-planner-backend-4ga2.onrender.com/api/auth/user', {
         headers: { Authorization: `Bearer ${jwtToken}` },
       });
 

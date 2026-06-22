@@ -12,7 +12,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const res = await axios.post('https://ai-trip-planner-backend-4ga2.onrender.com/api/auth/login', { email, password });
       login(res.data.user, res.data.token);
       navigate('/dashboard');
     } catch (err) {
@@ -23,7 +23,7 @@ export default function Login() {
   // ✅ Google login button
   const handleGoogleLogin = () => {
     // Redirect browser to backend Google OAuth route
-    window.location.href = 'http://localhost:5000/api/auth/google';
+    window.location.href = 'https://ai-trip-planner-backend-4ga2.onrender.com/api/auth/google';
   };
 
   return (

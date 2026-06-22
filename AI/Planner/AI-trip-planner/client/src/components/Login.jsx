@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/auth/current_user", {
+    axios.get("https://ai-trip-planner-backend-4ga2.onrender.com/api/auth/current_user", {
       withCredentials: true,
     })
     .then(res => {
@@ -24,7 +24,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://ai-trip-planner-backend-4ga2.onrender.com/api/auth/login", {
         email,
         password
       });
@@ -67,7 +67,7 @@ function Login() {
 
       {/* Google Login */}
       <div style={{ marginTop: "2rem" }}>
-        <a href="http://localhost:5000/api/auth/google">
+        <a href="https://ai-trip-planner-backend-4ga2.onrender.com/api/auth/google">
           <button
             type="button"
             style={{

@@ -3,7 +3,7 @@ import axios from "axios";
 export const sendMessage = async (userId, message) => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/chatbot",
+      "https://ai-trip-planner-backend-4ga2.onrender.com/api/chatbot",
       { userId, message },
       { withCredentials: true }
     );
@@ -17,7 +17,7 @@ export const sendMessage = async (userId, message) => {
 export const fetchChatHistory = async (userId) => {
   try {
     const response = await axios.get(
-      `http://localhost:5000/api/chatbot/history/${userId}`,
+      `https://ai-trip-planner-backend-4ga2.onrender.com/api/chatbot/history/${userId}`,
       { withCredentials: true }
     );
     return response.data.messages;
