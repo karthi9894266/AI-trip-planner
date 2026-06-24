@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("https://ai-trip-planner-backend-4ga2.onrender.com/api/auth/current_user", {
+    axios.get("https://ai-trip-planner-backend-4ga2.onrender.com/api/auth/user", {
       withCredentials: true,
     })
     .then(res => {
