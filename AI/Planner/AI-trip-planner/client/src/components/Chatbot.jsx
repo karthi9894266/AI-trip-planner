@@ -29,13 +29,16 @@ const Chatbox = () => {
 
     try {
       // ✅ Call your backend API instead of Hugging Face directly
-      const response = await fetch('/api/chat', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: userText }),
-      });
+      const response = await fetch(
+  'https://ai-trip-planner-backend-4ga2.onrender.com/api/chat',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ message: userText }),
+  }
+);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
