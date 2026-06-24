@@ -44,8 +44,9 @@ export default function FloatingChat({ userId }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      message: userText,
-    }),
+  message: userMessage,
+  userId: userId
+  }),
   }
 );
       
