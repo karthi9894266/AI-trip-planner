@@ -36,16 +36,18 @@ export default function FloatingChat({ userId }) {
     setIsLoading(true);
     
     try {
-      console.log('📤 Sending message to chatbot:', userMessage);
-      
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          message: userMessage,
-          userId: userId 
-        })
-      });
+      const response = await fetch(
+  'https://ai-trip-planner-backend-4ga2.onrender.com/api/chat',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      message: userText,
+    }),
+  }
+);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
