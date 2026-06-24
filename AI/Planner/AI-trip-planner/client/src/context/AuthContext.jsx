@@ -44,7 +44,18 @@ export function AuthProvider({ children }) {
   // ✅ FIX: Load token from localStorage on first load with better error handling
   useEffect(() => {
     const initAuth = async () => {
-      const savedToken = localStorage.getItem('token');
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlToken = urlParams.get('token');
+
+  if (urlToken) {
+    console.log('🔑 Token found in URL');
+    await login(urlToken);
+
+    window.history.replaceState({}, document.title, '/dashboard');
+    return;
+  }
+
+  const savedToken = localStorage.getItem('token');
       
       if (savedToken) {
         console.log('🔑 Found saved token, attempting to restore session...');
