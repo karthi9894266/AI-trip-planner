@@ -73,8 +73,10 @@ router.get(
   }),
   (req, res) => {
     try {
+      console.log("Google callback reached");
+      console.log("User:", req.user);
       const user = req.user; // Fetched/created in googleAuth.js
-
+      
       // Generate JWT
       const token = jwt.sign(
         { id: user._id },
