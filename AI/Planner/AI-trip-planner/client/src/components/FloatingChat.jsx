@@ -142,13 +142,10 @@ export default function FloatingChat({ userId }) {
           <div className="chat-input-area">
             <div className="chat-input-wrapper">
               <input
-                type="text"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Type a message..."
-                className="chat-input"
-                disabled={isLoading}
+               type="text"
+               value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="chat-input"
               />
               <button
                 onClick={sendMessage}

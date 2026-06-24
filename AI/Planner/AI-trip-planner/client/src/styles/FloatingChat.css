@@ -188,16 +188,18 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+   min-height: 60px;
 }
 
 .chat-input {
   flex: 1;
   min-height: 50px;
-  padding: 14px 18px;
+  padding: 0 18px;
   border: 1px solid #ddd;
-  border-radius: 16px;
+  border-radius: 24px;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 50px;
+  box-sizing: border-box;
   outline: none;
   transition: border-color 0.2s;
 }
@@ -209,15 +211,11 @@
 .chat-send-btn {
   background: #007bff;
   color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 24px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
+  height: 50px;
+  min-width: 90px;
+  padding: 0 20px;
 }
+
 
 .chat-send-btn:hover:not(:disabled) {
   background: #0056b3;
